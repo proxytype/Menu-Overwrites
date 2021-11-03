@@ -31,7 +31,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 
         if (g_hWnd)
         {
-            //SetWindowText(g_hWnd, L"Limited Notepad!");
+            SetWindowText(g_hWnd, L"Limited Notepad!");
 
             HMENU hMenu = GetMenu(g_hWnd);
             int numMenus = GetMenuItemCount(hMenu);
