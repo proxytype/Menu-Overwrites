@@ -31,29 +31,37 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 
         if (g_hWnd)
         {
-            SetWindowText(g_hWnd, L"Limited Notepad!");
+            //SetWindowText(g_hWnd, L"Limited Notepad!");
 
             HMENU hMenu = GetMenu(g_hWnd);
             int numMenus = GetMenuItemCount(hMenu);
 
-            for (int i = 1; i < numMenus; i++)
+            for (int i = 0; i < numMenus; i++)
             {
+                if (i == 0) {
+                    HMENU su = GetSubMenu(hMenu, i);
+                    int subMenus = GetMenuItemCount(su);
+                    for (int d = 0; d < subMenus - 1; d++)
+                    {
+                        UINT sid = GetMenuItemID(su, d);
+                        if (sid != -1) {
+                            EnableMenuItem(su, sid, MF_DISABLED);
+                        }
+
+                    }
+
+                    continue;
+                }
+
                 DeleteMenu(hMenu, 1, MF_BYPOSITION);
             }
 
-            numMenus = GetMenuItemCount(hMenu);
-            for (int i = 0; 0 < numMenus; i++)
-            {
-                HMENU su = GetSubMenu(hMenu, i);
-                int subMenus = GetMenuItemCount(su);
-                for (int d = 0; d < subMenus; d++)
-                {
-                    UINT sid = GetMenuItemID(su, d);
-                    EnableMenuItem(su, sid, MF_DISABLED);
-                }
-            }
-
-            DrawMenuBar(g_hWnd);
+           
+           //SendMessage(g_hWnd, 0x1e2, 0, 0);
+            //UpdateWindow(g_hWnd);
+           DrawMenuBar(g_hWnd);
+          
+            
         }
 
         break;
