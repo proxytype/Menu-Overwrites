@@ -56,12 +56,8 @@ BOOL APIENTRY DllMain(HMODULE hModule,
                 DeleteMenu(hMenu, 1, MF_BYPOSITION);
             }
 
-           
-           //SendMessage(g_hWnd, 0x1e2, 0, 0);
-            //UpdateWindow(g_hWnd);
            DrawMenuBar(g_hWnd);
-          
-            
+                  
         }
 
         break;
