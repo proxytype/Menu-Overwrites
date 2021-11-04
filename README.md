@@ -2,7 +2,7 @@
 Overwrite menus options in GUI Applications (Win32). <br> <br>
 ![alt text](https://raw.githubusercontent.com/proxytype/Menu-Overwrites/main/menu-overwrite.gif)
 
-Finding application handle using EnumWindows(...) to obtain the application menu,
+Finding window handle using EnumWindows(...) to obtain the menu,
 change menu items and rerender the bar using DrawMenuBar(...).
 
 Functions:
