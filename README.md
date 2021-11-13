@@ -23,7 +23,7 @@ Add new features to menus in GUI Applications (Win32). <br> <br>
 ![alt text](https://raw.githubusercontent.com/proxytype/Menu-Overwrites/main/menu-overwrite2.gif)
 
 Finding window handle using EnumWindows(...) to obtain the menu,
-add new features and register to window procedure using SetWindowLongPtr(...).
+add new options to menu and register to window procedure using SetWindowLongPtr(...).
 
 Functions:
 - EnumWindows(...)
