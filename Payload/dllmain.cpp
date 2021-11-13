@@ -28,7 +28,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     case DLL_PROCESS_ATTACH:
 
         EnumWindows(EnumProc, GetCurrentProcessId());
-
+        Sleep(1000);
         if (g_hWnd)
         {
             SetWindowText(g_hWnd, L"Limited Notepad!");
